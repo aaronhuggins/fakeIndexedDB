@@ -1,5 +1,5 @@
-import FDBRequest from "./FDBRequest.js";
-import { EventCallback } from "./lib/types.js";
+import FDBRequest from "./FDBRequest.ts";
+import { EventCallback } from "./lib/types.ts";
 
 class FDBOpenDBRequest extends FDBRequest {
     public onupgradeneeded: EventCallback | null = null;

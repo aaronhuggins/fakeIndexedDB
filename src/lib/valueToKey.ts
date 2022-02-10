@@ -1,5 +1,5 @@
-import { DataError } from "./errors.js";
-import { Key } from "./types.js";
+import { DataError } from "./errors.ts";
+import { Key } from "./types.ts";
 
 // https://w3c.github.io/IndexedDB/#convert-a-value-to-a-input
 const valueToKey = (input: any, seen?: Set<object>): Key | Key[] => {

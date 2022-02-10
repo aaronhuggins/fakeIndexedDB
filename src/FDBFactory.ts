@@ -1,12 +1,12 @@
-import FDBDatabase from "./FDBDatabase.js";
-import FDBOpenDBRequest from "./FDBOpenDBRequest.js";
-import FDBVersionChangeEvent from "./FDBVersionChangeEvent.js";
-import cmp from "./lib/cmp.js";
-import Database from "./lib/Database.js";
-import enforceRange from "./lib/enforceRange.js";
-import { AbortError, VersionError } from "./lib/errors.js";
-import FakeEvent from "./lib/FakeEvent.js";
-import { queueTask } from "./lib/scheduling.js";
+import FDBDatabase from "./FDBDatabase.ts";
+import FDBOpenDBRequest from "./FDBOpenDBRequest.ts";
+import FDBVersionChangeEvent from "./FDBVersionChangeEvent.ts";
+import cmp from "./lib/cmp.ts";
+import Database from "./lib/Database.ts";
+import enforceRange from "./lib/enforceRange.ts";
+import { AbortError, VersionError } from "./lib/errors.ts";
+import FakeEvent from "./lib/FakeEvent.ts";
+import { queueTask } from "./lib/scheduling.ts";
 
 const waitForOthersClosedDelete = (
     databases: Map<string, Database>,

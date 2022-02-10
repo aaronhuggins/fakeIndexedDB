@@ -1,18 +1,18 @@
-import FDBTransaction from "./FDBTransaction.js";
-import Database from "./lib/Database.js";
+import FDBTransaction from "./FDBTransaction.ts";
+import Database from "./lib/Database.ts";
 import {
     ConstraintError,
     InvalidAccessError,
     InvalidStateError,
     NotFoundError,
     TransactionInactiveError,
-} from "./lib/errors.js";
-import FakeDOMStringList from "./lib/FakeDOMStringList.js";
-import FakeEventTarget from "./lib/FakeEventTarget.js";
-import ObjectStore from "./lib/ObjectStore.js";
-import { queueTask } from "./lib/scheduling.js";
-import { KeyPath, TransactionMode } from "./lib/types.js";
-import validateKeyPath from "./lib/validateKeyPath.js";
+} from "./lib/errors.ts";
+import FakeDOMStringList from "./lib/FakeDOMStringList.ts";
+import FakeEventTarget from "./lib/FakeEventTarget.ts";
+import ObjectStore from "./lib/ObjectStore.ts";
+import { queueTask } from "./lib/scheduling.ts";
+import { KeyPath, TransactionMode } from "./lib/types.ts";
+import validateKeyPath from "./lib/validateKeyPath.ts";
 
 const confirmActiveVersionchangeTransaction = (database: FDBDatabase) => {
     if (!database._runningVersionchangeTransaction) {

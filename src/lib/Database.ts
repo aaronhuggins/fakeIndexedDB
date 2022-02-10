@@ -1,7 +1,7 @@
-import FDBDatabase from "../FDBDatabase.js";
-import FDBTransaction from "../FDBTransaction.js";
-import ObjectStore from "./ObjectStore.js";
-import { queueTask } from "./scheduling.js";
+import FDBDatabase from "../FDBDatabase.ts";
+import FDBTransaction from "../FDBTransaction.ts";
+import ObjectStore from "./ObjectStore.ts";
+import { queueTask } from "./scheduling.ts";
 
 // http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#dfn-database
 class Database {

@@ -1,6 +1,6 @@
-import FDBKeyRange from "../FDBKeyRange.js";
-import cmp from "./cmp.js";
-import { Key, Record } from "./types.js";
+import FDBKeyRange from "../FDBKeyRange.ts";
+import cmp from "./cmp.ts";
+import { Key, Record } from "./types.ts";
 
 /**
  * Classic binary search implementation. Returns the index where the key

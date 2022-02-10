@@ -1,4 +1,4 @@
-import { KeyPath, Value } from "./types.js";
+import { KeyPath, Value } from "./types.ts";
 
 // http://w3c.github.io/IndexedDB/#check-that-a-key-could-be-injected-into-a-value
 const canInjectKey = (keyPath: KeyPath, value: Value) => {

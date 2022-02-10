@@ -1,11 +1,11 @@
-import FDBCursor from "./FDBCursor.js";
-import FDBCursorWithValue from "./FDBCursorWithValue.js";
-import FDBIndex from "./FDBIndex.js";
-import FDBKeyRange from "./FDBKeyRange.js";
-import FDBRequest from "./FDBRequest.js";
-import FDBTransaction from "./FDBTransaction.js";
-import canInjectKey from "./lib/canInjectKey.js";
-import enforceRange from "./lib/enforceRange.js";
+import FDBCursor from "./FDBCursor.ts";
+import FDBCursorWithValue from "./FDBCursorWithValue.ts";
+import FDBIndex from "./FDBIndex.ts";
+import FDBKeyRange from "./FDBKeyRange.ts";
+import FDBRequest from "./FDBRequest.ts";
+import FDBTransaction from "./FDBTransaction.ts";
+import canInjectKey from "./lib/canInjectKey.ts";
+import enforceRange from "./lib/enforceRange.ts";
 import {
     ConstraintError,
     DataError,
@@ -14,16 +14,16 @@ import {
     NotFoundError,
     ReadOnlyError,
     TransactionInactiveError,
-} from "./lib/errors.js";
-import extractKey from "./lib/extractKey.js";
-import FakeDOMStringList from "./lib/FakeDOMStringList.js";
-import Index from "./lib/Index.js";
-import ObjectStore from "./lib/ObjectStore.js";
-import structuredClone from "./lib/structuredClone.js";
-import { FDBCursorDirection, Key, KeyPath, Value } from "./lib/types.js";
-import validateKeyPath from "./lib/validateKeyPath.js";
-import valueToKey from "./lib/valueToKey.js";
-import valueToKeyRange from "./lib/valueToKeyRange.js";
+} from "./lib/errors.ts";
+import extractKey from "./lib/extractKey.ts";
+import FakeDOMStringList from "./lib/FakeDOMStringList.ts";
+import Index from "./lib/Index.ts";
+import ObjectStore from "./lib/ObjectStore.ts";
+import structuredClone from "./lib/structuredClone.ts";
+import { FDBCursorDirection, Key, KeyPath, Value } from "./lib/types.ts";
+import validateKeyPath from "./lib/validateKeyPath.ts";
+import valueToKey from "./lib/valueToKey.ts";
+import valueToKeyRange from "./lib/valueToKeyRange.ts";
 
 const confirmActiveTransaction = (objectStore: FDBObjectStore) => {
     if (objectStore._rawObjectStore.deleted) {

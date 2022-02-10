@@ -1,13 +1,13 @@
-import FDBKeyRange from "../FDBKeyRange.js";
+import FDBKeyRange from "../FDBKeyRange.ts";
 import {
     getByKey,
     getByKeyRange,
     getIndexByKey,
     getIndexByKeyGTE,
     getIndexByKeyRange,
-} from "./binarySearch.js";
-import cmp from "./cmp.js";
-import { Key, Record } from "./types.js";
+} from "./binarySearch.ts";
+import cmp from "./cmp.ts";
+import { Key, Record } from "./types.ts";
 
 class RecordStore {
     private records: Record[] = [];

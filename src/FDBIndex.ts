@@ -1,19 +1,19 @@
-import FDBCursor from "./FDBCursor.js";
-import FDBCursorWithValue from "./FDBCursorWithValue.js";
-import FDBKeyRange from "./FDBKeyRange.js";
-import FDBObjectStore from "./FDBObjectStore.js";
-import FDBRequest from "./FDBRequest.js";
-import enforceRange from "./lib/enforceRange.js";
+import FDBCursor from "./FDBCursor.ts";
+import FDBCursorWithValue from "./FDBCursorWithValue.ts";
+import FDBKeyRange from "./FDBKeyRange.ts";
+import FDBObjectStore from "./FDBObjectStore.ts";
+import FDBRequest from "./FDBRequest.ts";
+import enforceRange from "./lib/enforceRange.ts";
 import {
     ConstraintError,
     InvalidStateError,
     TransactionInactiveError,
-} from "./lib/errors.js";
-import FakeDOMStringList from "./lib/FakeDOMStringList.js";
-import Index from "./lib/Index.js";
-import { FDBCursorDirection, Key, KeyPath } from "./lib/types.js";
-import valueToKey from "./lib/valueToKey.js";
-import valueToKeyRange from "./lib/valueToKeyRange.js";
+} from "./lib/errors.ts";
+import FakeDOMStringList from "./lib/FakeDOMStringList.ts";
+import Index from "./lib/Index.ts";
+import { FDBCursorDirection, Key, KeyPath } from "./lib/types.ts";
+import valueToKey from "./lib/valueToKey.ts";
+import valueToKeyRange from "./lib/valueToKeyRange.ts";
 
 const confirmActiveTransaction = (index: FDBIndex) => {
     if (index._rawIndex.deleted || index.objectStore._rawObjectStore.deleted) {

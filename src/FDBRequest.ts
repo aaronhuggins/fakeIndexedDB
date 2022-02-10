@@ -1,10 +1,10 @@
-import FDBCursor from "./FDBCursor.js";
-import FDBIndex from "./FDBIndex.js";
-import FDBObjectStore from "./FDBObjectStore.js";
-import FDBTransaction from "./FDBTransaction.js";
-import { InvalidStateError } from "./lib/errors.js";
-import FakeEventTarget from "./lib/FakeEventTarget.js";
-import { EventCallback } from "./lib/types.js";
+import FDBCursor from "./FDBCursor.ts";
+import FDBIndex from "./FDBIndex.ts";
+import FDBObjectStore from "./FDBObjectStore.ts";
+import FDBTransaction from "./FDBTransaction.ts";
+import { InvalidStateError } from "./lib/errors.ts";
+import FakeEventTarget from "./lib/FakeEventTarget.ts";
+import { EventCallback } from "./lib/types.ts";
 
 class FDBRequest extends FakeEventTarget {
     public _result: any = null;

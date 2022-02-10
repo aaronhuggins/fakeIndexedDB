@@ -1,5 +1,5 @@
-import { DataError } from "./errors.js";
-import valueToKey from "./valueToKey.js";
+import { DataError } from "./errors.ts";
+import valueToKey from "./valueToKey.ts";
 
 const getType = (x: any) => {
     if (typeof x === "number") {

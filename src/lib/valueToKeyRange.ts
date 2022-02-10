@@ -1,6 +1,6 @@
-import FDBKeyRange from "../FDBKeyRange.js";
-import { DataError } from "./errors.js";
-import valueToKey from "./valueToKey.js";
+import FDBKeyRange from "../FDBKeyRange.ts";
+import { DataError } from "./errors.ts";
+import valueToKey from "./valueToKey.ts";
 
 // http://w3c.github.io/IndexedDB/#convert-a-value-to-a-key-range
 const valueToKeyRange = (value: any, nullDisallowedFlag: boolean = false) => {

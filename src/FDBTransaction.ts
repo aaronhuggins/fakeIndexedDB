@@ -1,22 +1,22 @@
-import FDBDatabase from "./FDBDatabase.js";
-import FDBObjectStore from "./FDBObjectStore.js";
-import FDBRequest from "./FDBRequest.js";
+import FDBDatabase from "./FDBDatabase.ts";
+import FDBObjectStore from "./FDBObjectStore.ts";
+import FDBRequest from "./FDBRequest.ts";
 import {
     AbortError,
     InvalidStateError,
     NotFoundError,
     TransactionInactiveError,
-} from "./lib/errors.js";
-import FakeDOMStringList from "./lib/FakeDOMStringList.js";
-import FakeEvent from "./lib/FakeEvent.js";
-import FakeEventTarget from "./lib/FakeEventTarget.js";
-import { queueTask } from "./lib/scheduling.js";
+} from "./lib/errors.ts";
+import FakeDOMStringList from "./lib/FakeDOMStringList.ts";
+import FakeEvent from "./lib/FakeEvent.ts";
+import FakeEventTarget from "./lib/FakeEventTarget.ts";
+import { queueTask } from "./lib/scheduling.ts";
 import {
     EventCallback,
     RequestObj,
     RollbackLog,
     TransactionMode,
-} from "./lib/types.js";
+} from "./lib/types.ts";
 
 // http://www.w3.org/TR/2015/REC-IndexedDB-20150108/#transaction
 class FDBTransaction extends FakeEventTarget {

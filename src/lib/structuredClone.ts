@@ -2,7 +2,7 @@
 
 // @ts-ignore
 import realisticStructuredClone from "realistic-structured-clone";
-import { DataCloneError } from "./errors.js";
+import { DataCloneError } from "./errors.ts";
 
 const structuredCloneWrapper = <T>(input: T): T => {
     // @ts-ignore
