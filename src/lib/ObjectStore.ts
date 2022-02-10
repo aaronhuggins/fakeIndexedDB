@@ -130,7 +130,7 @@ class ObjectStore {
                         identifier = remainingKeyPath.slice(0, i);
                         remainingKeyPath = remainingKeyPath.slice(i + 1);
 
-                        if (!object.hasOwnProperty(identifier)) {
+                        if (!Object.prototype.hasOwnProperty.call(object, identifier)) {
                             object[identifier] = {};
                         }
 

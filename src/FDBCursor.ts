@@ -347,7 +347,7 @@ class FDBCursor {
         }
 
         const effectiveObjectStore = getEffectiveObjectStore(this);
-        const effectiveKey = this.source.hasOwnProperty("_rawIndex")
+        const effectiveKey = Object.prototype.hasOwnProperty.call(this.source, "_rawIndex")
             ? this.primaryKey
             : this._position;
         const transaction = effectiveObjectStore.transaction;
@@ -370,7 +370,7 @@ class FDBCursor {
             throw new InvalidStateError();
         }
 
-        if (!this._gotValue || !this.hasOwnProperty("value")) {
+        if (!this._gotValue || !Object.prototype.hasOwnProperty.call(this, "value")) {
             throw new InvalidStateError();
         }
 
@@ -575,7 +575,7 @@ class FDBCursor {
 
     public delete() {
         const effectiveObjectStore = getEffectiveObjectStore(this);
-        const effectiveKey = this.source.hasOwnProperty("_rawIndex")
+        const effectiveKey = Object.prototype.hasOwnProperty.call(this.source, "_rawIndex")
             ? this.primaryKey
             : this._position;
         const transaction = effectiveObjectStore.transaction;
@@ -598,7 +598,7 @@ class FDBCursor {
             throw new InvalidStateError();
         }
 
-        if (!this._gotValue || !this.hasOwnProperty("value")) {
+        if (!this._gotValue || !Object.prototype.hasOwnProperty.call(this, "value")) {
             throw new InvalidStateError();
         }
 

@@ -20,7 +20,7 @@ const canInjectKey = (keyPath: KeyPath, value: Value) => {
             return false;
         }
 
-        const hop = value.hasOwnProperty(identifier);
+        const hop = Object.prototype.hasOwnProperty.call(value, identifier);
         if (!hop) {
             return true;
         }
