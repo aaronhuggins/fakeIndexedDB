@@ -1,7 +1,7 @@
 // Built-in structuredClone arrived in Node 17, so we need to keep this file around as long as we support Node 16
 
-// @ts-ignore
-import realisticStructuredClone from "realistic-structured-clone";
+// // @ts-ignore
+/* import realisticStructuredClone from "realistic-structured-clone";
 import { DataCloneError } from "./errors.ts";
 
 const structuredCloneWrapper = <T>(input: T): T => {
@@ -16,6 +16,6 @@ const structuredCloneWrapper = <T>(input: T): T => {
     } catch (err) {
         throw new DataCloneError();
     }
-};
+}; */
 
-export default structuredCloneWrapper;
+export default structuredClone;
