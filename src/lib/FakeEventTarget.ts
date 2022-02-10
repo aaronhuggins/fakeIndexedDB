@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import { InvalidStateError } from "./errors.ts";
 import FakeEvent from "./FakeEvent.ts";
 import { EventCallback, EventType } from "./types.ts";
@@ -38,8 +39,7 @@ const invokeEventListeners = (event: FakeEvent, obj: FakeEventTarget) => {
             continue;
         }
 
-        // @ts-ignore
-        listener.callback.call(event.currentTarget, event);
+        listener.callback.call(event.currentTarget, event as any);
     }
 
     const typeToProp: { [key in EventType]: EventTypeProp } = {
@@ -64,8 +64,7 @@ const invokeEventListeners = (event: FakeEvent, obj: FakeEventTarget) => {
             type: event.type,
         };
         if (!stopped(event, listener)) {
-            // @ts-ignore
-            listener.callback.call(event.currentTarget, event);
+            listener.callback.call(event.currentTarget, event as any);
         }
     }
 };

@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-inferrable-types
 import cmp from "./lib/cmp.ts";
 import { DataError } from "./lib/errors.ts";
 import { Key } from "./lib/types.ts";

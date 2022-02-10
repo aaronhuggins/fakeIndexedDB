@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import FDBDatabase from "./FDBDatabase.ts";
 import FDBObjectStore from "./FDBObjectStore.ts";
 import FDBRequest from "./FDBRequest.ts";

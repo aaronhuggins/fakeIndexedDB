@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import FDBCursor from "./FDBCursor.ts";
 import FDBCursorWithValue from "./FDBCursorWithValue.ts";
 import FDBKeyRange from "./FDBKeyRange.ts";

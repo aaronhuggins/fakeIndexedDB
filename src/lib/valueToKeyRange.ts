@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any no-inferrable-types
 import FDBKeyRange from "../FDBKeyRange.ts";
 import { DataError } from "./errors.ts";
 import valueToKey from "./valueToKey.ts";

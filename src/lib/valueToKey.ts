@@ -1,3 +1,4 @@
+// deno-lint-ignore-file ban-types no-explicit-any
 import { DataError } from "./errors.ts";
 import { Key } from "./types.ts";
 

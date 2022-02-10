@@ -1,4 +1,5 @@
-import structuredClone from "./structuredClone.ts";
+// deno-lint-ignore-file no-explicit-any
+// TODO: Why is there an unused structured clone import here? import structuredClone from "./structuredClone.ts";
 import { Key, KeyPath, Value } from "./types.ts";
 import valueToKey from "./valueToKey.ts";
 

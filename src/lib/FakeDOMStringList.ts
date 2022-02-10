@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 // Subclass Array to get nice behaviors like destructuring, but delete various Array methods that don't exist on DOMStringList https://github.com/dumbmatter/fakeIndexedDB/issues/66#issuecomment-922407403
 
 class FakeDOMStringList extends Array<string> {

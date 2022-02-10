@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any no-inferrable-types
 import FDBKeyRange from "./FDBKeyRange.ts";
 import FDBObjectStore from "./FDBObjectStore.ts";
 import FDBRequest from "./FDBRequest.ts";
@@ -381,7 +382,7 @@ class FDBCursor {
 
             try {
                 tempKey = extractKey(effectiveObjectStore.keyPath, clone);
-            } catch (err) {
+            } catch (_err) {
                 /* Handled immediately below */
             }
 

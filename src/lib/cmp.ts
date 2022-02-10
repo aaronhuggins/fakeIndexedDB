@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import { DataError } from "./errors.ts";
 import valueToKey from "./valueToKey.ts";
 
