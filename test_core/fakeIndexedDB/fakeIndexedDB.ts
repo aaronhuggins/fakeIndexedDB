@@ -1,11 +1,13 @@
-import * as assert from "assert";
-import fakeIndexedDB from "../../fakeIndexedDB.js";
-import FDBCursorWithValue from "../../FDBCursorWithValue.js";
-import FDBDatabase from "../../FDBDatabase.js";
-import FDBFactory from "../../FDBFactory.js";
-import FDBKeyRange from "../../FDBKeyRange.js";
-import FakeDOMStringList from "../../lib/FakeDOMStringList.js";
-import { TransactionMode } from "../../lib/types.js";
+// deno-lint-ignore-file no-explicit-any
+import 'https://gist.github.com/aaronhuggins/a54934b0d45e0ad477e6f158bb039cfd/raw/91453b8af9a067ea7765b0cab4e63c32ede9b3bb/deno_mocha.ts'
+import * as assert from "https://deno.land/std@0.125.0/node/assert.ts";
+import fakeIndexedDB from "../../src/fakeIndexedDB.ts";
+import FDBCursorWithValue from "../../src/FDBCursorWithValue.ts";
+import FDBDatabase from "../../src/FDBDatabase.ts";
+import FDBFactory from "../../src/FDBFactory.ts";
+import FDBKeyRange from "../../src/FDBKeyRange.ts";
+import FakeDOMStringList from "../../src/lib/FakeDOMStringList.ts";
+import { TransactionMode } from "../../src/lib/types.ts";
 
 describe("fakeIndexedDB Tests", () => {
     describe("Transaction Lifetime", () => {
@@ -368,8 +370,10 @@ describe("fakeIndexedDB Tests", () => {
 
                         const tx = db.transaction("store");
                         const store = tx.objectStore("store");
+                        // @ts-ignore: assertion error in Deno
                         assert.ok(!store._rawObjectStore.deleted);
                         const index = store.index("content");
+                        // @ts-ignore: assertion error in Deno
                         assert.ok(!index._rawIndex.deleted);
 
                         store.count().onsuccess = (e3) => {
@@ -377,7 +381,7 @@ describe("fakeIndexedDB Tests", () => {
                         };
 
                         index.get("test2").onsuccess = (e3) => {
-                            assert.deepEqual(e3.target.result, {
+                            assert.deepStrictEqual(e3.target.result, {
                                 content: "test2",
                             });
                         };
@@ -418,7 +422,7 @@ describe("fakeIndexedDB Tests", () => {
                 const request2 = tx2.objectStore("store").get(1);
 
                 request2.onsuccess = (e3) => {
-                    assert.deepEqual(e3.target.result, {
+                    assert.deepStrictEqual(e3.target.result, {
                         whatever: "foo",
                     });
                 };
@@ -498,7 +502,7 @@ describe("fakeIndexedDB Tests", () => {
                     done();
                     return;
                 }
-                const { key, value } = cursor;
+                const { key: _key, value } = cursor;
                 const expectedID = expected.shift();
                 assert.equal(value.id, expectedID);
                 cursor.continue();
@@ -672,7 +676,7 @@ describe("fakeIndexedDB Tests", () => {
             bulkGet(theDB, "table1", []),
             bulkGet(theDB, "table1", [3]),
         ]);
-        assert.deepEqual(result, [[undefined], [], [undefined]]);
+        assert.deepStrictEqual(result, [[undefined], [], [undefined]]);
     });
 
     describe("Events", () => {
@@ -689,6 +693,7 @@ describe("fakeIndexedDB Tests", () => {
             const request = fakeIndexedDB.open(name, 3);
             request.addEventListener("upgradeneeded", handler);
             request.addEventListener("success", () => {
+                // @ts-ignore: assertion error in Deno
                 assert.ok(!called);
                 done();
             });
@@ -708,6 +713,7 @@ describe("fakeIndexedDB Tests", () => {
             request.addEventListener("upgradeneeded", handler);
             request.addEventListener("upgradeneeded", dummy);
             request.addEventListener("success", () => {
+                // @ts-ignore: assertion error in Deno
                 assert.ok(called);
                 done();
             });
