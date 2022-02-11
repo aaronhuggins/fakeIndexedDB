@@ -1,8 +1,9 @@
-import * as assert from "assert";
-import fakeIndexedDB from "../../fakeIndexedDB.js";
-import FDBDatabase from "../../FDBDatabase.js";
-import FDBKeyRange from "../../FDBKeyRange.js";
-import FDBObjectStore from "../../FDBObjectStore.js";
+import 'https://gist.github.com/aaronhuggins/a54934b0d45e0ad477e6f158bb039cfd/raw/91453b8af9a067ea7765b0cab4e63c32ede9b3bb/deno_mocha.ts'
+import * as assert from "https://deno.land/std@0.125.0/node/assert.ts";
+import fakeIndexedDB from "../../src/fakeIndexedDB.ts";
+import FDBDatabase from "../../src/FDBDatabase.ts";
+import FDBKeyRange from "../../src/FDBKeyRange.ts";
+import FDBObjectStore from "../../src/FDBObjectStore.ts";
 
 // Tests taken from https://github.com/dumbmatter/IndexedDB-getAll-shim
 
@@ -113,7 +114,7 @@ describe("getAll", () => {
             store = tx.objectStore("store");
             db2.deleteObjectStore("store");
         };
-        request.onsuccess = (e) => {
+        request.onsuccess = (_e) => {
             assert.throws(() => {
                 store.getAll();
             }, /InvalidStateError/);
@@ -248,7 +249,7 @@ describe("getAllKeys", () => {
             store = tx.objectStore("store");
             db2.deleteObjectStore("store");
         };
-        request.onsuccess = (e) => {
+        request.onsuccess = (_e) => {
             assert.throws(() => {
                 store.getAllKeys();
             }, /InvalidStateError/);
